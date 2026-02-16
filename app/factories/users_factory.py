@@ -14,7 +14,11 @@ class UsersFactory(IUsersFactory):
         data = json.loads(Path(json_path).read_text(encoding="utf-8"))
 
         users_payload = data.get("users")
+
         if users_payload is None:
             raise ValueError("No users found")
+
+        if not isinstance(users_payload, list):
+            raise ValueError("Users must be a list")
 
         return [UserModel(**u) for u in users_payload]
