@@ -1,8 +1,6 @@
 # step_09
 
-Repository SQL (SqlAlchemyUsersRepository)
-
-Test fourni : `test_repository_sql.py`
+Test fourni : `test_dependencies.py`
 
 Commande :
 

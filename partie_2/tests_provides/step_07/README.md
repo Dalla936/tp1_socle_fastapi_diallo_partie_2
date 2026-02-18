@@ -1,8 +1,7 @@
 # step_07
+Seed (création tables + remplissage)
 
-Connexion DB (engine/session/get_db) - SELECT 1
-
-Test fourni : `test_db_connection.py`
+Test fourni : `test_seed.py`
 
 Commande :
 

@@ -2,7 +2,7 @@
 
 Composition / dépendances (DI)
 
-Test fourni : `test_dependencies_composition.py`
+Test fourni : `test_user_table.py`
 
 Commande :
 

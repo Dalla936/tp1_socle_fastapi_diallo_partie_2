@@ -1,8 +1,7 @@
 # step_08
 
-Seed (création tables + remplissage)
 
-Test fourni : `test_seed_users.py`
+Test fourni : `test_sql_reposiory.py`
 
 Commande :
 

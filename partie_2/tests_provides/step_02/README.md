@@ -2,7 +2,7 @@
 
 FakeUsersRepository (repository fake)
 
-Test fourni : `test_users_repository_fake.py`
+Test fourni : `test_fake_repository.py`
 
 Commande :
 

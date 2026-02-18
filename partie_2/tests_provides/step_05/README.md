@@ -1,8 +1,8 @@
 # step_05
 
-Settings (.env / valeurs par défaut)
+Session (Session pour SQLAlchemy)
 
-Test fourni : `test_settings.py`
+Test fourni : `test_session.py`
 
 Commande :
 

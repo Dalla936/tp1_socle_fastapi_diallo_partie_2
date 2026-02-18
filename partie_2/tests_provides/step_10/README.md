@@ -2,7 +2,7 @@
 
 API profil SQL
 
-Test fourni : `test_users_api_sql.py`
+Test fourni : `test_api.py`
 
 Commande :
 
