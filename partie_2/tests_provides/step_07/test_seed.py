@@ -23,7 +23,7 @@ def test_should_insert_rows_given_seed_script(tmp_path: Path, monkeypatch):
     monkeypatch.setenv("USERS_JSON_PATH", str(json_path))
 
     # Act
-    from scripts.seed_users import main  # imported after env set
+    from app.scripts.seed_users import main  # imported after env set
 
     main()
 
