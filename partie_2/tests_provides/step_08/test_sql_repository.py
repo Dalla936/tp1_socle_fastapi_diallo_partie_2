@@ -13,7 +13,7 @@ def test_should_create_user_and_return_id_given_payload(tmp_path: Path, monkeypa
     # Arrange
     db_file = tmp_path / "repo.db"
     monkeypatch.setenv("DATABASE_URL", f"sqlite+pysqlite:///{db_file}")
-    from scripts.seed_users import create_tables  # helper expected in seed script
+    from app.scripts.seed_users import create_tables  # helper expected in seed script
 
     create_tables()
 
