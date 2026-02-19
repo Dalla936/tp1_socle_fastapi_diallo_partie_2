@@ -10,8 +10,10 @@ class UserTable(Base):
     """
     Table ORM représentant l'entité User en base.
     """
-
-    __tablename__ = "users"
+    """
+    Donne la structure de la table mais en sql avec le mapping etc..
+    """
+    __tablename__ = "users" #nom de la table en sql, pluriel pour respecter les conventions
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     login: Mapped[str] = mapped_column(String(50), unique=True, nullable=False)
