@@ -8,7 +8,7 @@ from app.models.user_model import UserModel
 
 class FakeUsersRepository(IUsersRepository):
 
-    def __init__(self, factory, json_path : str) -> None: #vu depuis les tests, on peut se permettre de faire du coupling fort avec la factory et le json_path
+    def __init__(self, factory: UsersFactory, json_path : str) -> None: #vu depuis les tests, on peut se permettre de faire du coupling fort avec la factory et le json_path
         self.users : list[UserModel] = []
         self.factory = factory
         self.json_path = json_path
