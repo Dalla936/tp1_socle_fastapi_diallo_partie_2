@@ -96,3 +96,21 @@ def test_should_return_none_given_user_deleted_from_db(db: Session):
 
     # Assert (1 assertion métier)
     assert found is None
+
+def test_should_persist_user_in_db_and_find_it_given_created_user(db: Session):
+    """
+    Vérifie que create_user() écrit réellement en base :
+    - on crée un utilisateur
+    - on le relit ensuite via get_user_by_id()
+    """
+    # Arrange
+    repo = UsersRepositorySql(db)
+    unique_login = f"user_{uuid.uuid4().hex[:8]}"
+    payload = UserModelCreate(login=unique_login, age=25)
+
+    # Act
+    created = repo.create_user(payload)
+    found = repo.get_user_by_id(created.id)
+
+    # Assert (1 assertion métier)
+    assert found is not None and found.login == unique_login
