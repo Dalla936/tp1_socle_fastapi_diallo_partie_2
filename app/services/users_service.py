@@ -3,7 +3,7 @@ from __future__ import annotations
 from app.factories.users_factory_protocol import IUsersFactory
 from app.models.user_model import UserModel
 from app.models.user_model_create import UserModelCreate
-from app.repositories.i_users_repository import IUsersRepository
+from app.repositories.protocols.i_users_repository import IUsersRepository
 from app.factories.users_factory import UsersFactory
 
 

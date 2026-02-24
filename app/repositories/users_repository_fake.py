@@ -1,6 +1,6 @@
 from typing import Optional
 from app.models.user_model_create import UserModelCreate
-from app.repositories.i_users_repository import IUsersRepository
+from app.repositories.protocols.i_users_repository import IUsersRepository
 from app.factories.users_factory import UsersFactory
 from app.services.users_service import UsersService
 from app.models.user_model import UserModel
