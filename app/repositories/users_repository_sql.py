@@ -19,7 +19,7 @@ class UsersRepositorySql(IUsersRepository):
         return list(users)
     
     def get_user_by_id(self, user_id):
-        user = self._db.query(UserTable).filter(UserTable.id == user_id).first()
+        user = self._db.query(UserTable).filter(UserTable.id == user_id).first() #return le 1er utilisateur qui correspond à l'id ou None si aucun trouvé
         if not user :
             return None
         user_model = UserModel(id=user.id, login=user.login, age=user.age)
