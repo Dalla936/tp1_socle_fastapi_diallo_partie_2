@@ -24,7 +24,7 @@ import json
 from pathlib import Path
 import pytest
 
-from app.api.dependencies import get_users_service_dep
+from app.api.dependencies import get_users_service
 from app.factories.users_factory import UsersFactory
 from app.repositories.users_repository_fake import FakeUsersRepository
 from app.services.users_service import UsersService
@@ -43,7 +43,7 @@ def client(tmp_path: Path):
         repo = FakeUsersRepository(factory=UsersFactory(), json_path=str(p))
         return UsersService(repository=repo)
 
-    app.dependency_overrides[get_users_service_dep] = override_users_service
+    app.dependency_overrides[get_users_service] = override_users_service
     c = TestClient(app)
     yield c
     app.dependency_overrides.clear()

@@ -2,24 +2,13 @@ from __future__ import annotations
 
 from fastapi import APIRouter, Depends, HTTPException
 
-from app.core.settings import Settings
-from app.factories.users_factory import UsersFactory
+from app.api.dependencies import get_users_service
 from app.models.user_model import UserModel
 from app.models.user_model_create import UserModelCreate
 from app.services.users_service import UsersService
 
 
 router = APIRouter(prefix="/users", tags=["users"])
-
-
-def get_users_service() -> UsersService:
-    """
-    Dépendance simple (TP) :
-    instancie Settings + Factory + Service.
-    """
-    settings = Settings()
-    factory = UsersFactory()
-    return UsersService(factory=factory, users_json_path=settings.users_json_path)
 
 
 @router.get("", response_model=list[UserModel])

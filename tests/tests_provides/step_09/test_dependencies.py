@@ -16,7 +16,6 @@ class StubSettings:
 
     def __init__(self, users_backend: str, users_json_path: str = "data/users.json") -> None:
         self.users_backend = users_backend
-        self.app_profile = users_backend  # Le stub doit imiter Settings qui a app_profile
         self.users_json_path = users_json_path
 
 

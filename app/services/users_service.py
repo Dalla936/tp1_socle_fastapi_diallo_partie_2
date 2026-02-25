@@ -45,23 +45,15 @@ class UsersService(IUsersRepository):
 
     def create_user(self, payload: UserModelCreate) -> UserModel:
         if self._repository is None:
-
             next_id = max((u.id for u in self._users), default=0) + 1
-
             created = UserModel(
                 id=next_id,
                 login=payload.login,
                 age=payload.age,
             )
-            self._users.append(created) #Service crée un utilisateur en mémoire, pas de persistance réelle, juste pour les tests
+            self._users.append(created)
             return created
         else:
-            next_id = max((u.id for u in self._repository.list_users()), default=0) + 1
-            created = UserModel(
-                id=next_id,
-                login=payload.login,
-                age=payload.age,
-            )
-            self._repository.create_user(created)
-            return created
+            # Passer le payload au repository, pas le UserModel créé
+            return self._repository.create_user(payload)
 
